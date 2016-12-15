@@ -1,0 +1,17 @@
+li {
+  float: left;
+  border: 5px solid black;
+  width: 90px;
+  height: 90px;
+  background: gray;
+  cursor: pointer
+}
+
+ul {
+  width: 300px;
+  margin: 30px auto
+}
+
+li:hover {
+  background: yellow;
+}

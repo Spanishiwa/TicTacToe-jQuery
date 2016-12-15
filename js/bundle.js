@@ -49,7 +49,7 @@
 
 	$( () => {
 	  // Your code here
-	  const rootEl = $('ttt');
+	  const rootEl = $('.ttt');
 	  const game = new Game();
 	  new View(game, rootEl);
 	});
@@ -67,24 +67,27 @@
 	    this.setupBoard();
 	  }
 
-	  bindEvents() {}
+	  bindEvents() {
+
+	  }
 
 	  makeMove($square) {}
 
+
 	  setupBoard() {
-	    const $ul = $("<ul>");
-	    $ul.addClass("group");
+	    const $board = $("<ul>");
+	    $board.addClass("board");
 
 	    for (let rowIdx = 0; rowIdx < 3; rowIdx++) {
 	      for (let colIdx = 0; colIdx < 3; colIdx++) {
-	        let $li = $("<li>");
-	        $li.data("pos", [rowIdx, colIdx]);
+	        let $cell = $("<li>");
+	        $cell.data("pos", [rowIdx, colIdx]);
 
-	        $ul.append($li);
+	        $board.append($cell);
 	      }
 	    }
 
-	    this.$el.append($ul);
+	    this.$el.append($board);
 	  }
 	}
 
