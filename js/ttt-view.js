@@ -4,6 +4,7 @@ class View {
     this.$el = $el;
 
     this.setupBoard();
+    this.bindEvents();
   }
 
   bindEvents() {
@@ -13,7 +14,13 @@ class View {
     }));
   }
 
-  makeMove($square) {}
+  makeMove($square) {
+    const pos = $square.data("pos");
+    const currentPlayer = this.game.currentPlayer;
+
+    this.game.playMove(pos);
+    $square.addClass(currentPlayer);
+  }
 
 
   setupBoard() {

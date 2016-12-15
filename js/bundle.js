@@ -65,6 +65,7 @@
 	    this.$el = $el;
 
 	    this.setupBoard();
+	    this.bindEvents();
 	  }
 
 	  bindEvents() {
@@ -74,7 +75,13 @@
 	    }));
 	  }
 
-	  makeMove($square) {}
+	  makeMove($square) {
+	    const pos = $square.data("pos");
+	    const currentPlayer = this.game.currentPlayer;
+
+	    this.game.playMove(pos);
+	    $square.addClass(currentPlayer);
+	  }
 
 
 	  setupBoard() {

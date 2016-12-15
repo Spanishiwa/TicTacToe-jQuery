@@ -19,3 +19,17 @@ ul {
 li:hover {
   background: yellow;
 }
+
+.x:after {
+  background: white;
+  content: "X";
+  font-size: 60px;
+  line-height: 80px
+}
+
+.o:after {
+  background: white;
+  content: "O";
+  font-size: 60px;
+  line-height: 80px
+}
