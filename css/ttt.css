@@ -4,11 +4,11 @@ li {
   width: 90px;
   height: 90px;
   background: gray;
-  cursor: pointer
+  cursor: pointer;
 }
 
 ul {
-  list-style: none
+  list-style: none;
 }
 
 ul {
@@ -20,21 +20,35 @@ li:hover {
   background: yellow;
 }
 
+.x,
+.o {
+  background: white;
+  cursor: default;
+}
+
 
 .x:after {
   display: block;
-  background: white;
+  background: red;
   content: "X";
   font-size: 60px;
-  line-height: 80px;
-  width: 100%
+  line-height: 90px;
+
 }
 
 .o:after {
   display: block;
-  background: white;
+  background: green;
   content: "O";
   font-size: 60px;
-  line-height: 80px;
-  width: 100%
+  line-height: 90px;
+
+}
+
+figcaption {
+  font-size: 30px;
+  border: 0;
+  margin: 30px;
+  padding: 0;
+  text-align: center;
 }

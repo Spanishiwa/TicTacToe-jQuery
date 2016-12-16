@@ -18,8 +18,31 @@ class View {
     const pos = $square.data("pos");
     const currentPlayer = this.game.currentPlayer;
 
-    this.game.playMove(pos);
+    try {
+      this.game.playMove(pos);
+    }
+
+    catch (e) {
+      alert(`${e.msg}`);
+      return;
+    }
+
     $square.addClass(currentPlayer);
+
+    if (this.game.isOver()) {
+      const winner = this.game.winner();
+      const $figcaption = $("<figcaption>");
+
+      if (winner) {
+        $figcaption.html(`You win, ${winner}!`);
+      }
+      else {
+        $figcaption.html(`It's a stalemate!`);
+      }
+
+      this.$el.append($figcaption);
+      this.$el.off("click");
+    }
   }
 
 
